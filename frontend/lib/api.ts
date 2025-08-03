@@ -1,9 +1,12 @@
 export async function extractPatientData(transcript: string) {
-  const res = await fetch("http://localhost:5050/api/extract", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ transcript }),
-  });
+  const res = await fetch(
+    "https://deepscribe-assesment.onrender.com/api/extract",
+    {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ transcript }),
+    }
+  );
 
   const data = await res.json();
 
